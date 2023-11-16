@@ -175,6 +175,10 @@ vim .env.example
 
 ## Test
 
+* [Playing with the API](https://docs.djangoproject.com/en/4.2/intro/tutorial02/#playing-with-the-api)
+* [get_user_model()](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#django.contrib.auth.get_user_model)
+* [[Day24] - Django-REST-Framework User Management](https://ithelp.ithome.com.tw/articles/10278976)
+
 ```shell
 $ python manage.py shell
 >>> from django.contrib.auth import get_user_model
