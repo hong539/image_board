@@ -172,3 +172,15 @@ docker pull focal1119/local_library_website:dev
 #.env.example for using and doing modification for your usecase
 vim .env.example
 ```
+
+## Test
+
+```shell
+$ python manage.py shell
+>>> from django.contrib.auth import get_user_model
+>>> from myapp.models import BlogPost
+>>> user = get_user_model().objects.create_user(username='testuser', password='12345')
+>>> post = BlogPost.objects.create(author=user, date='2023-11-16', title='Test Post', post='This is a test post.')
+>>> post.author.username
+'testuser'
+```
