@@ -31,12 +31,12 @@
 ## Prerequisites
 
 * Linux host such as Arch Linux, Debian, Ubuntu, RHEL ...etc
-* Python == 3.8.16
+* Python >= 3.10
 * [pyenv+poetry](https://github.com/hong539/setup_dev_environment/blob/main/programming_languages/python/python.md#usage-with-pyenvpoetry)
     * pyenv for Python versions control
     * poetry for Project dependency control
     * Project dependcy detialls will be in pyproject.toml/poetry.lock
-* PostgreSQL == 15.3 or Django builtin SQLite
+* MySQL
     * [PostgreSQL 15.4 Documentation](https://www.postgresql.org/docs/15/index.html)
     * [PostgreSQL with docker](https://hub.docker.com/_/postgres)
     * [pacman directly install PostgreSQL on Arch Linux](https://wiki.archlinux.org/title/PostgreSQL)
