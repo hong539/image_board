@@ -23,15 +23,6 @@
 ## Quick Start
 
 ```shell
-#check out prerequisites to prepare your environment
-
-#setting up for start postgresql on every bootup
-sudo systemctl enable postgresql.service
-
-#running postgresql server with this commands
-#if everything is setting up!
-sudo systemctl status postgresql.service
-
 #spawns a virtual environment
 poetry shell
 
