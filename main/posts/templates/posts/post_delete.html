@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h2>刪除記錄</h2>
+<p>您確定要刪除「{{ object }}」這筆記錄嗎?</p>
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" action="" value="是的，我要刪除" />
+</form>
+{% endblock %}

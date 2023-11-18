@@ -2,7 +2,11 @@
 
 ## To-do-list
 
-* [tutorial04](https://docs.djangoproject.com/en/4.2/intro/tutorial04/)
+* app post:
+    * edit views/PostDetail to make query for two models(Post/Comment) or even combine them into one to render template post_detail.html
+    * [實戰：留言板](https://hackmd.io/@dreamer/B1lAjxHRH/https%3A%2F%2Fhackmd.io%2FNlW4ubx7QKu4IeFkygSpQA)
+* [~~tutorial04](https://docs.djangoproject.com/en/4.2/intro/tutorial04/)
+
 
 ## Prerequisites
 
@@ -119,3 +123,8 @@ $ python manage.py shell
 >>> post.author.username
 'testuser'
 ```
+
+## Misc
+
+* [chatgpt-line-bot](https://github.com/Lin-jun-xiang/chatgpt-line-bot)
+* [gpt4free](https://github.com/xtekky/gpt4free)
