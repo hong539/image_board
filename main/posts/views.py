@@ -27,13 +27,15 @@ class IndexView(ListView):
 class PostDetail(DetailView):
     model = Post
     template_name = 'posts/post_detail.html'
-    post = get_object_or_404(Post)
-    comments = post.comments.filter(active=True)
-    new_comment = None    
+    # post = get_object_or_404(Post)
+    # comments = post.comments.filter(active=True)
+    # new_comment = None    
     
     def get_context_data(self, **kwargs: Any):
         context = super().get_context_data(**kwargs)
-        context['Comment'] = Comment.objects.all()
+        post = self.get_object()
+        comments = Comment.objects.filter(post=post).order_by('-created_date')
+        context['Comment'] = comments
         return context
 
 # 新增留言
