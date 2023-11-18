@@ -1,32 +1,8 @@
-# local_library_website
+# image_board
 
 ## To-do-list
 
-* ~~Try RDBMS(Relational Database Management System):　SQLite, PostgreSQL~~
-* ~~For Doing [Django Tutorial: The Local Library website](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django) steps by steps.~~
-    * [source codes](https://github.com/mdn/django-locallibrary-tutorial/tree/main)
-* ~~Extend and prepare My skills to find some good web-backend/devops/architecture jobs.~~
-* Practice system architecture design.
-    * Update architecture with diagram
-* Deploy methods survey
-    * natively run on Linux host after activate virtual environment via "poetry shell"
-        * run with [django develeopment server](https://docs.djangoproject.com/en/4.2/intro/tutorial01/#the-development-server)
-        * run with [gunicorn](https://docs.djangoproject.com/en/4.2/howto/deployment/wsgi/gunicorn/)
-        * run with [puff-rs](https://docs.rs/puff-rs/0.1.8/puff_rs/#puff--django)            
-    * podmand run
-    * k8s deploy
-* Frontend    
-    * CSS work with [Tailwind CSS](https://tailwindcss.com/docs/installation)
-* Monitor and alert
-    * [Sentry](https://github.com/getsentry)
-        * [Rust Development at Sentry](https://develop.sentry.dev/rust/)
-        * [self-hosted](https://develop.sentry.dev/self-hosted/)
-        * [Python Error and Performance Monitoring for Django web apps](https://sentry.io/for/python/?original_referrer=https%3A%2F%2Fgithub.com%2F&platform=sentry.python.django)
-        * Real-time crash reporting for your web apps, mobile apps, and games.
-* Benchmark
-    * [Extreme HTTP Performance Tuning: 1.2M API req/s on a 4 vCPU EC2 Instance](https://talawah.io/blog/extreme-http-performance-tuning-one-point-two-million/)
-    * [Flame Graphs](https://www.brendangregg.com/flamegraphs.html)
-    * [wrk - a HTTP benchmarking tool](https://github.com/wg/wrk)
+* [tutorial04](https://docs.djangoproject.com/en/4.2/intro/tutorial04/)
 
 ## Prerequisites
 
@@ -37,13 +13,12 @@
     * poetry for Project dependency control
     * Project dependcy detialls will be in pyproject.toml/poetry.lock
 * MySQL
-    * [PostgreSQL 15.4 Documentation](https://www.postgresql.org/docs/15/index.html)
-    * [PostgreSQL with docker](https://hub.docker.com/_/postgres)
-    * [pacman directly install PostgreSQL on Arch Linux](https://wiki.archlinux.org/title/PostgreSQL)
+    * [docker hub/MySQL](https://hub.docker.com/_/mysql)
+    * [MySQL 8.0 Reference Manual](https://dev.mysql.com/doc/refman/8.0/en/)
+    * [教學課程：使用 MySQL 和 Docker Compose 建立多容器應用程式](https://learn.microsoft.com/zh-tw/visualstudio/docker/tutorials/tutorial-multi-container-app-mysql)
 * tree
     * a CLI tools to list contents of directories in a tree-like format.
 * docker/podman (just pickup one to do conatiner image building and running)
-* kind for create local Kubernetes clusters via docker/podman
 
 ## Quick Start
 
@@ -78,7 +53,7 @@ python3 manage.py help
 python3 manage.py createsuperuser
 
 #run devserver
-python3 manage.py runserver
+python manage.py runserver 8080
 
 
 #check gunicorn
@@ -130,51 +105,11 @@ poetry add diagrams --optional --extras diagrams
 #export requirements.txt if needed
 poetry export -f requirements.txt --output requirements.txt
 poetry export -f requirements.txt --output requirements.txt --without-hashes
-
-#podman comon operations
-#login container registry such docker hub
-podman login docker.io
-podman images
-podman container list --all
-podman container rm local_library
-podman rmi localhost/dev-test:latest
-
-#docker/podman build container image
-#docker build -t dev-test -f Dockerfile.dev
-podman build --no-cache -t local_library_website/dev-test -f Dockerfile.dev
-podman build -t docker.io/focal1119/local_library_website:dev -f Dockerfile.dev
-
-#prod build
-podman build -t docker.io/focal1119/local_library_website:prod -f Dockerfile.prod
-podman build --no-cache -t docker.io/focal1119/local_library_website:prod -f Dockerfile.prod
-
-#test docekr/podman container image in localhost when PostgreSQL is online
-podman run -d --env-file=.env --name local_library -p 8000:8000 localhost/dev-test
-
-#run with Dockerfile.dev
-podman run -d --env-file=.env --name local_library -p 8000:8000 docker.io/focal1119/local_library_website:dev
-
-#run with Dockerfile.prod
-podman run -d --env-file=.env --name local_library -p 8000:8000 docker.io/focal1119/local_library_website:prod
-
-#check logs
-podman logs --follow local_library
-
-#push
-# docker push docker.io/focal1119/local_library_website:tagname
-docker push docker.io/focal1119/local_library_website:dev
-podman push docker.io/focal1119/local_library_website:dev
-podman push docker.io/focal1119/local_library_website:prod
-
-#pull
-docker pull focal1119/local_library_website:dev
-
-#.env.example for using and doing modification for your usecase
-vim .env.example
 ```
 
 ## Test
 
+* [django / pass multiple models to my ListView](https://stackoverflow.com/questions/67223248/django-pass-multiple-models-to-my-listview)
 * table join
 * [Changing to a custom user model mid-project](https://docs.djangoproject.com/en/4.2/topics/auth/customizing/#changing-to-a-custom-user-model-mid-project)
 * [Writing your first Django app, part 2](https://docs.djangoproject.com/en/4.2/intro/tutorial02/)
