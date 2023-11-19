@@ -2,6 +2,9 @@
 
 ## To-do-list
 
+* reference implementation
+    * [µchan - anonymous imageboard software](https://github.com/floens/uchan)
+    * [web borwser plugin - ccd0/4chan-x](https://github.com/ccd0/4chan-x)
 * app post:
     * edit views/PostDetail to make query for two models(Post/Comment) or even combine them into one to render template post_detail.html
         * [ForeignKey.related_name](https://docs.djangoproject.com/en/4.2/ref/models/fields/#django.db.models.ForeignKey.related_name)
