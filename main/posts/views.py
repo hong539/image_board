@@ -44,6 +44,6 @@ class PostDelete(LoginRequiredMixin, DeleteView):
 
 class CommentCreate(CreateView):
     model = Comment
-    fields = ['post', 'content']     # 僅顯示 post, subject, content 這 3 個欄位
+    fields = ['post', 'user', 'content']     # 僅顯示 post, subject, content 這 3 個欄位
     success_url = '/posts/'                   # 新增成功後，導向留言列表
     template_name = 'posts/comment_creat.html'                 # 指定欲使用的頁面範本        

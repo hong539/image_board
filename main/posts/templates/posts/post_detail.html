@@ -8,6 +8,7 @@
 
 {% block reply %}
 {% for comment in post.comments.all %}
-    {{ comment.content|linebreaks }}
+    {{ comment.user.username }}
+    {{ comment.content|linebreaks }}    
 {% endfor %}
 {% endblock %}

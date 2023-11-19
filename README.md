@@ -67,6 +67,8 @@ gunicorn locallibrary.wsgi
 python3 manage.py makemigrations
 python3 manage.py migrate
 
+python3 manage.py sqlmigrate posts 0001
+
 #run test
 python3 manage.py test
 #Showing more test information
