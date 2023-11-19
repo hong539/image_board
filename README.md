@@ -4,11 +4,13 @@
 
 * app post:
     * edit views/PostDetail to make query for two models(Post/Comment) or even combine them into one to render template post_detail.html
-    * [Django: Implementing a Form within a generic DetailView](https://stackoverflow.com/questions/45659986/django-implementing-a-form-within-a-generic-detailview)
-    * [Problem with mixing Detail View and Form Mixin django](https://stackoverflow.com/questions/66503703/problem-with-mixing-detail-view-and-form-mixin-django)
-    * [實戰：留言板](https://hackmd.io/@dreamer/B1lAjxHRH/https%3A%2F%2Fhackmd.io%2FNlW4ubx7QKu4IeFkygSpQA)
-* [~~tutorial04](https://docs.djangoproject.com/en/4.2/intro/tutorial04/)
-
+        * [ForeignKey.related_name](https://docs.djangoproject.com/en/4.2/ref/models/fields/#django.db.models.ForeignKey.related_name)
+            * edit/checkt post_detail.html
+            * To display the comments associated with the post, you can use the related_name attribute in the ForeignKey field of the Comment model. Here’s an example:
+            * post is the Post object that we want to display comments for, and comments is the related_name that we defined in the ForeignKey field of the Comment model.
+* app accounts:
+    * custom login/logged out page
+    * user permission relations
 
 ## Prerequisites
 
