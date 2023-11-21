@@ -3,6 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from .models import Post, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 class IndexView(ListView):
     model = Post
@@ -27,6 +28,12 @@ class PostDelete(LoginRequiredMixin, DeleteView):
 
 class CommentCreate(CreateView):
     model = Comment
-    fields = ['post', 'user', 'content']
+    fields = ['user', 'post', 'content']
     success_url = '/posts/'
+    # success_url = reverse_lazy('detail')
     template_name = 'posts/comment_creat.html'
+    
+    # def form_valid(self, form):
+    #     form.instance.user = self.request.user
+    #     form.instance.post_id = self.kwargs['post']
+    #     return super().form_valid(form)    
