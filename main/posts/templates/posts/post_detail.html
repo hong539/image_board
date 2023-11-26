@@ -7,6 +7,10 @@
 {% endblock %}
 
 {% block reply %}
+{% if user.is_authenticated %}  
+<a href="{% url 'posts:reply' pk=post.pk%}">留言</a>    
+{% endif %}
+<hr>
 {% for comment in post.comments.all %}
     <span>{{ comment.user.username }}:</span> {{ comment.content|linebreaksbr }}<br>
 {% endfor %}

@@ -22,9 +22,6 @@
   <hr>
   <div>
     {% block reply %}{% endblock %}
-  </div>    
-    {% if user.is_authenticated %}  
-    <a href="{% url 'posts:reply' %}">推文</a>    
-    {% endif %}
+  </div>
 </body>
 </html>
