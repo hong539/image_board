@@ -10,6 +10,7 @@
         * Image board engine, Danbooru-style.
     * [A Complete Beginner's Guide to Django - Part 1](https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html)
 * app post:
+    * How to render images/video Thumbnail?
     * edit views/PostDetail to make query for two models(Post/Comment) or even combine them into one to render template post_detail.html
         * [ForeignKey.related_name](https://docs.djangoproject.com/en/4.2/ref/models/fields/#django.db.models.ForeignKey.related_name)
             * edit/checkt post_detail.html
