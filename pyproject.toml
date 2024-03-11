@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "image-board"
+name = "main"
 version = "0.1.0"
 description = "make a image board with Django"
 authors = ["Hong <hong@ubuntu-lab-01>"]
@@ -8,8 +8,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-django = "^4.2.7"
-mysqlclient = "^2.2.0"
+mysqlclient = "2.2.0"
+django-environ = "0.10.0"
+django = "4.1"
 
 
 [build-system]

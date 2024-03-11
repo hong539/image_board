@@ -88,8 +88,8 @@ DATABASES = {
         "NAME": "image_board",
         "USER": "worker",
         "PASSWORD": "d26N7MKLzlhk",
-        "HOST": "192.168.69.45",
-        "PORT": "3306",
+        "HOST": "192.168.88.206",
+        "PORT": "33306",
     }
 }
 
