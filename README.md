@@ -47,6 +47,13 @@ uvx migrate-to-uv
 #run django with uv
 uv run  main/manage.py runserver 18080
 
+# open URL with browser or test with cli tools: curl/wget/k6/...etc
+# main
+http://127.0.0.1:18080
+
+# cms
+http://127.0.0.1:18080/admin/login/?next=/admin/
+
 #for help
 python3 manage.py help
 
