@@ -3,8 +3,9 @@
 ## To-do-list
 
 * reference implementation
-    * [pinry](https://github.com/pinry/pinry)
-    * [Boorunaut](https://pypi.org/project/Boorunaut/)
+    * [github.com/hong539/pttweb](https://github.com/hong539/pttweb)
+    * [github.com/pinry/pinry](https://github.com/pinry/pinry)
+    * [pypi.org/project/Boorunaut](https://pypi.org/project/Boorunaut/)
     * [forked from gnstaxo/imageboard](https://github.com/hong539/imageboard)
     * [szurubooru](https://github.com/rr-/szurubooru)
         * Image board engine, Danbooru-style.
@@ -23,15 +24,16 @@
 ## Prerequisites
 
 * Linux host such as Arch Linux, Debian, Ubuntu, RHEL ...etc
-* Python >= 3.10
-* [pyenv+poetry](https://github.com/hong539/setup_dev_environment/blob/main/programming_languages/python/python.md#usage-with-pyenvpoetry)
-    * pyenv for Python versions control
-    * poetry for Project dependency control
-    * Project dependcy detialls will be in pyproject.toml/poetry.lock
 * MySQL
     * [docker hub/MySQL](https://hub.docker.com/_/mysql)
+    * [MySQL 5.7 Reference Manual](https://dev.mysql.com/doc/refman/5.7/en/)
     * [MySQL 8.0 Reference Manual](https://dev.mysql.com/doc/refman/8.0/en/)
     * [教學課程：使用 MySQL 和 Docker Compose 建立多容器應用程式](https://learn.microsoft.com/zh-tw/visualstudio/docker/tutorials/tutorial-multi-container-app-mysql)
+* uv
+    * An extremely fast Python package and project manager, written in Rust.
+    * [docs.astral.sh/uv/](https://docs.astral.sh/uv/)
+* setup python django project with uv
+    * run scripts/setup_with_uv.sh
 * tree
     * a CLI tools to list contents of directories in a tree-like format.
 * docker/podman (just pickup one to do conatiner image building and running)
@@ -39,19 +41,11 @@
 ## Quick Start
 
 ```shell
-#spawns a virtual environment
-poetry shell
+#How to migrate from Poetry to UV package manager?
+uvx migrate-to-uv
 
-#add packages
-#src: https://python-poetry.org/docs/cli/#add
-poetry add django
-poetry add gunicorn
-poetry add diagrams -G dev
-poetry add django-environ==0.10.0
-
-#remove packages
-poetry remove diagrams
-poetry remove django-environ
+#run django with uv
+uv run  main/manage.py runserver 18080
 
 #for help
 python3 manage.py help
@@ -60,7 +54,7 @@ python3 manage.py help
 python3 manage.py createsuperuser
 
 #run devserver
-python manage.py runserver 8080
+python manage.py runserver 18080
 
 
 #check gunicorn
@@ -140,5 +134,6 @@ $ python manage.py shell
 
 ## Misc
 
+* [stackoverflow.com/questions/79118841/how-to-migrate-from-poetry-to-uv-package-manager](https://stackoverflow.com/questions/79118841/how-to-migrate-from-poetry-to-uv-package-manager)
 * [chatgpt-line-bot](https://github.com/Lin-jun-xiang/chatgpt-line-bot)
 * [gpt4free](https://github.com/xtekky/gpt4free)
